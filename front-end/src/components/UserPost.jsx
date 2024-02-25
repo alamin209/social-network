@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { UserHeader } from './UserHeader'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Avatar, Box, Flex, Image, Text } from '@chakra-ui/react'
+import { Avatar, Box, Button, Divider, Flex, Image, Text } from '@chakra-ui/react'
 import { BsThreeDots } from 'react-icons/bs'
 import Actions from './Actions'
+import Comment from './Comment'
 
 export const UserPost = () => {
 	const [like,setLike] =useState(false);
@@ -58,7 +58,7 @@ export const UserPost = () => {
 				</Flex>
 				<BsThreeDots/>
 			</Flex>
-			<Text fontSize={"sm"} > This is 1st Post</Text>
+			<Text fontSize={"sm"} > This is 1st Post and thread</Text>
 			<Box borderEndRadius={6} overflow={"hidden"} border={"1px solid"} borderColor={"gray.light"}>
 				<Image src="/post1.png" w={"full"} />
 			</Box>
@@ -71,21 +71,44 @@ export const UserPost = () => {
 						</Text>
 						<Box w={0.5} h={0.5} borderRadius={"full"} bg={"gray.light"}></Box>
 						<Text color={"gray.light"} fontSize='sm'>
-							 likes
+							{200+ (like?1:0)} likes
 						</Text>
 					</Flex>
-
-			{/* <Flex gap={2} alignItems={"center"}>
-              <Text color={"gray.light"} fontSize="sm">
-				123 replies
-			  </Text>
-			  <Box w={0.5} h={0.5} borderRadius={"full"} bg={"gray.light"}  >rrrrrrrrrr </Box>
-			  <Text color={"gray.light"} fontSize="sm">
-				123 likes
-			  </Text>
-			</Flex> */}
 		</Flex>
       </Flex>
+	  <Divider my={4} />
+	  <Flex justifyContent={"space-between"} >
+		<Flex gap={2} alignItems={"center"}>
+			<Text fontSize={"2xl"}>Demo</Text>
+			<Text color={"gray.light"}>Get the App to Like,reply liked,post</Text>
+		</Flex>
+		<Button>Get</Button>
+	  </Flex>
+	  <Divider my={4} />
+	  <Comment comment="looks really Good" 
+	  createdAt="2d"
+	  likes={100}
+	  username="ssss "
+	  userAvater="https://bit.ly/kent-c-dodds"
+	  />
+	  <Comment comment="looks really Good" 
+	  createdAt="2d"
+	  likes={100}
+	  username="srrrr "
+	  userAvater="https://bit.ly/dan-abramov"
+	  />
+	  <Comment comment="looks really Good" 
+	  createdAt="2d"
+	  likes={100}
+	  username="yyyyyy "
+	  userAvater="https://bit.ly/tioluwani-kolawole"
+	  />
+	  <Comment comment="looks really Good" 
+	  createdAt="2d"
+	  likes={100}
+	  username="alamin "
+	  userAvatar="https://bit.ly/dan-abramov"
+	  />
     </Link>
   )
 }
