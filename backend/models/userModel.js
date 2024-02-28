@@ -1,3 +1,4 @@
+
 const userSchema = mongoose.Schema({
     name:{
         type: String,
